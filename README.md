@@ -148,3 +148,8 @@ Additionally, TypeScript definitions can be installed via:
 # Additional typescript definitions
 npm install @types/file-saver --save-dev
 ```
+
+```bash
+file-saver存储在github国内不能下载，所有另存为npm
+```
+
