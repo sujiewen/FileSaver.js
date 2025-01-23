@@ -88,14 +88,15 @@
   // https://www.whatismybrowser.com/guides/the-latest-user-agent/macos
 
 
-  var isMacOSWebView = /Macintosh/.test(navigator.userAgent) && /AppleWebKit/.test(navigator.userAgent) && !/Safari/.test(navigator.userAgent);
+  var isMacOSWebView = _global.navigator && /Macintosh/.test(navigator.userAgent) && /AppleWebKit/.test(navigator.userAgent) && !/Safari/.test(navigator.userAgent);
   var saveAs = _global.saveAs || ( // probably in some web worker
   typeof window !== 'object' || window !== _global ? function saveAs() {}
   /* noop */
   // Use download attribute first if possible (#193 Lumia mobile) unless this is a macOS WebView
   : 'download' in HTMLAnchorElement.prototype && !isMacOSWebView ? function saveAs(blob, name, opts) {
-    var URL = _global.URL || _global.webkitURL;
-    var a = document.createElement('a');
+    var URL = _global.URL || _global.webkitURL; // Namespace is used to prevent conflict w/ Chrome Poper Blocker extension (Issue #561)
+
+    var a = document.createElementNS('http://www.w3.org/1999/xhtml', 'a');
     name = name || blob.name || 'download';
     a.download = name;
     a.rel = 'noopener'; // tabnabbing

@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/eligrey/FileSaver.js"
+    "url": "https://github.com/sujiewen/FileSaver.js"
   },
   "keywords": [
     "filesaver",
@@ -30,7 +30,7 @@
   "bugs": {
     "url": "https://github.com/eligrey/FileSaver.js/issues"
   },
-  "homepage": "https://github.com/eligrey/FileSaver.js#readme",
+  "homepage": "https://github.com/sujiewen/FileSaver.js#readme",
   "devDependencies": {
     "@babel/cli": "^7.1.0",
     "@babel/core": "^7.1.0",
